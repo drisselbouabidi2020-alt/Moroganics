@@ -1,42 +1,13 @@
 
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Moroganics — Authentic Moroccan Extra Virgin Olive Oil. From the groves of Fquih Ben Salah, Morocco to your table.">
 <title>Moroganics — Authentic Moroccan Olive Oil</title>
-
-<!-- Moroccan Flag Favicon -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23c1272d'/%3E%3Cpolygon points='16,7.5 20.2,21.2 8.5,12.8 23.5,12.8 11.8,21.2' fill='none' stroke='%23006233' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-
-<!--
-=====================================================================
-  IMAGE REPLACEMENT GUIDE — MOROGANICS WEBSITE
-=====================================================================
-  This website uses SVG placeholders for all images.
-  To replace any image with your own, search for the tag:
-
-    IMAGE-PLACEHOLDER-1  →  Hero Background (recommended: 1920×1080px)
-    IMAGE-PLACEHOLDER-2  →  About Section Photo (recommended: 600×700px)
-    IMAGE-PLACEHOLDER-3  →  Product 250ml Bottle (recommended: 400×600px)
-    IMAGE-PLACEHOLDER-4  →  Product 500ml Bottle (recommended: 400×600px)
-    IMAGE-PLACEHOLDER-5  →  Product 1 Liter Bottle (recommended: 400×600px)
-
-  For each placeholder, replace the ENTIRE <svg>...</svg> block with:
-
-    <img src="path/to/your-image.jpg"
-         alt="Description of image"
-         style="width:100%; height:100%; object-fit:cover;">
-
-  Example:
-    Before:  <svg xmlns="...">...</svg>
-    After:   <img src="images/hero.jpg" alt="Moroccan olive groves" style="width:100%;height:100%;object-fit:cover;">
-=====================================================================
--->
-
 <style>
 *, *::before, *::after {
   margin: 0;
@@ -61,8 +32,6 @@
   --text: #3a3a3a;
   --text-light: #6b6b6b;
   --terracotta: #c47a5a;
-  --red-morocco: #c1272d;
-  --green-morocco: #006233;
 }
 
 html {
@@ -78,6 +47,7 @@ body {
   line-height: 1.7;
 }
 
+/* Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--sand); }
 ::-webkit-scrollbar-thumb { background: var(--olive-light); border-radius: 4px; }
@@ -100,7 +70,6 @@ nav {
 nav.scrolled {
   background: rgba(250, 248, 244, 0.97);
   backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
   padding: 0.8rem 3rem;
   box-shadow: 0 2px 30px rgba(0,0,0,0.08);
 }
@@ -163,11 +132,10 @@ nav.scrolled .nav-links a:hover {
 .nav-cta {
   padding: 0.6rem 1.8rem !important;
   border: 1.5px solid var(--gold) !important;
+  border-radius: 0;
   color: var(--gold) !important;
   transition: all 0.3s !important;
 }
-
-.nav-cta::after { display: none !important; }
 
 .nav-cta:hover {
   background: var(--gold) !important;
@@ -180,9 +148,6 @@ nav.scrolled .nav-links a:hover {
   cursor: pointer;
   gap: 5px;
   z-index: 1001;
-  background: none;
-  border: none;
-  padding: 5px;
 }
 
 .hamburger span {
@@ -190,7 +155,6 @@ nav.scrolled .nav-links a:hover {
   height: 2px;
   background: var(--white);
   transition: all 0.4s;
-  display: block;
 }
 
 nav.scrolled .hamburger span {
@@ -207,43 +171,6 @@ nav.scrolled .hamburger span {
 
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* ===== MOBILE MENU ===== */
-.mobile-menu {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(45, 55, 30, 0.97);
-  backdrop-filter: blur(10px);
-  z-index: 999;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-
-.mobile-menu.open {
-  display: flex;
-  opacity: 1;
-}
-
-.mobile-menu a {
-  color: var(--white);
-  text-decoration: none;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.mobile-menu a:hover {
-  color: var(--gold);
 }
 
 /* ===== HERO ===== */
@@ -263,10 +190,9 @@ nav.scrolled .hamburger span {
   z-index: 0;
 }
 
-.hero-bg svg, .hero-bg img {
+.hero-bg svg {
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 .hero-overlay {
@@ -274,9 +200,9 @@ nav.scrolled .hamburger span {
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(45, 55, 30, 0.78) 0%,
-    rgba(60, 74, 42, 0.62) 40%,
-    rgba(90, 110, 58, 0.45) 100%
+    rgba(45, 55, 30, 0.75) 0%,
+    rgba(60, 74, 42, 0.6) 40%,
+    rgba(90, 110, 58, 0.4) 100%
   );
   z-index: 1;
 }
@@ -336,26 +262,19 @@ nav.scrolled .hamburger span {
   animation: fadeUp 1s 0.9s forwards;
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 1.2rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  opacity: 0;
-  animation: fadeUp 1s 1.1s forwards;
-}
-
 .hero-btn {
   display: inline-block;
-  padding: 1rem 3rem;
+  padding: 1rem 3.5rem;
   background: var(--gold);
   color: var(--white);
   text-decoration: none;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   font-weight: 700;
   transition: all 0.4s;
+  opacity: 0;
+  animation: fadeUp 1s 1.1s forwards;
   position: relative;
   overflow: hidden;
 }
@@ -371,32 +290,14 @@ nav.scrolled .hamburger span {
   transition: left 0.5s;
 }
 
-.hero-btn:hover::before { left: 100%; }
+.hero-btn:hover::before {
+  left: 100%;
+}
 
 .hero-btn:hover {
   background: var(--gold-dark);
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
-}
-
-.hero-btn-outline {
-  display: inline-block;
-  padding: 1rem 3rem;
-  background: transparent;
-  color: var(--white);
-  text-decoration: none;
-  font-size: 0.82rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-weight: 700;
-  transition: all 0.4s;
-  border: 1.5px solid rgba(255,255,255,0.5);
-}
-
-.hero-btn-outline:hover {
-  border-color: var(--white);
-  background: rgba(255,255,255,0.1);
-  transform: translateY(-2px);
 }
 
 .hero-scroll {
@@ -430,7 +331,7 @@ nav.scrolled .hamburger span {
   50% { opacity: 0.5; transform: scaleY(0.7); }
 }
 
-/* ===== SECTION COMMON ===== */
+/* ===== SECTION STYLES ===== */
 section {
   padding: 7rem 3rem;
 }
@@ -490,14 +391,13 @@ section {
 .about-image {
   position: relative;
   height: 550px;
+  border-radius: 2px;
   overflow: hidden;
 }
 
-.about-image svg, .about-image img {
+.about-image svg {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 .about-image-frame {
@@ -507,6 +407,7 @@ section {
   width: 100%;
   height: 100%;
   border: 2px solid var(--gold);
+  border-radius: 2px;
   z-index: -1;
 }
 
@@ -555,11 +456,21 @@ section {
 }
 
 .products .section-label,
-.products .section-title { text-align: center; }
+.products .section-title {
+  text-align: center;
+}
 
-.products .section-label { padding-left: 0; }
-.products .section-label::before { display: none; }
-.products .section-divider { margin: 0 auto 1.5rem; }
+.products .section-label {
+  padding-left: 0;
+}
+
+.products .section-label::before {
+  display: none;
+}
+
+.products .section-divider {
+  margin: 0 auto 3rem;
+}
 
 .products-subtitle {
   max-width: 600px;
@@ -598,7 +509,9 @@ section {
   transition: transform 0.5s;
 }
 
-.product-card:hover::before { transform: scaleX(1); }
+.product-card:hover::before {
+  transform: scaleX(1);
+}
 
 .product-card:hover {
   transform: translateY(-8px);
@@ -616,16 +529,12 @@ section {
   overflow: hidden;
 }
 
-.product-image svg, .product-image img {
-  max-height: 280px;
-  width: auto;
-  max-width: 100%;
+.product-image svg {
+  height: 280px;
   transition: transform 0.5s;
-  object-fit: contain;
 }
 
-.product-card:hover .product-image svg,
-.product-card:hover .product-image img {
+.product-card:hover .product-image svg {
   transform: scale(1.05);
 }
 
@@ -678,9 +587,17 @@ section {
   text-align: center;
 }
 
-.quality .section-label { padding-left: 0; }
-.quality .section-label::before { display: none; }
-.quality .section-divider { margin: 0 auto 3rem; }
+.quality .section-label {
+  padding-left: 0;
+}
+
+.quality .section-label::before {
+  display: none;
+}
+
+.quality .section-divider {
+  margin: 0 auto 3rem;
+}
 
 .quality-grid {
   display: grid;
@@ -693,6 +610,7 @@ section {
 .quality-item {
   padding: 2.5rem 1.5rem;
   transition: all 0.4s;
+  border-radius: 2px;
 }
 
 .quality-item:hover {
@@ -750,15 +668,30 @@ section {
 .process::before {
   content: '';
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L30 60M0 30L60 30' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3C/svg%3E");
   pointer-events: none;
 }
 
-.process .section-label { color: var(--gold-light); padding-left: 0; }
-.process .section-label::before { display: none; }
-.process .section-title { color: var(--white); }
-.process .section-divider { margin: 0 auto 3.5rem; }
+.process .section-label {
+  color: var(--gold-light);
+  padding-left: 0;
+}
+
+.process .section-label::before {
+  display: none;
+}
+
+.process .section-title {
+  color: var(--white);
+}
+
+.process .section-divider {
+  margin: 0 auto 3.5rem;
+}
 
 .process-steps {
   display: flex;
@@ -777,6 +710,7 @@ section {
   min-width: 200px;
   max-width: 260px;
   padding: 2rem 1.5rem;
+  position: relative;
 }
 
 .step-number {
@@ -849,6 +783,10 @@ section {
   gap: 5rem;
 }
 
+.contact-info {
+  padding-top: 1rem;
+}
+
 .contact-info p {
   font-size: 1.05rem;
   color: var(--text-light);
@@ -893,16 +831,6 @@ section {
   margin-bottom: 0;
 }
 
-.contact-detail div a {
-  color: var(--olive);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.contact-detail div a:hover {
-  color: var(--gold);
-}
-
 .contact-form {
   background: var(--white);
   padding: 3rem;
@@ -931,8 +859,7 @@ section {
 }
 
 .form-group input,
-.form-group textarea,
-.form-group select {
+.form-group textarea {
   width: 100%;
   padding: 0.9rem 1rem;
   border: 1px solid var(--sand-dark);
@@ -942,13 +869,10 @@ section {
   color: var(--text);
   transition: border-color 0.3s;
   outline: none;
-  border-radius: 0;
-  -webkit-appearance: none;
 }
 
 .form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
+.form-group textarea:focus {
   border-color: var(--gold);
 }
 
@@ -1016,16 +940,22 @@ footer {
   font-weight: 600;
 }
 
-.footer-col ul { list-style: none; }
+.footer-col ul {
+  list-style: none;
+}
 
-.footer-col ul li { margin-bottom: 0.8rem; }
+.footer-col ul li {
+  margin-bottom: 0.8rem;
+}
 
 .footer-col ul li a {
   color: rgba(255,255,255,0.6);
   text-decoration: none;
   font-size: 0.88rem;
   transition: all 0.3s;
-  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .footer-col ul li a:hover {
@@ -1080,158 +1010,6 @@ footer {
   text-decoration: none;
 }
 
-/* ===== MODAL SYSTEM ===== */
-.modal-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(4px);
-  z-index: 2000;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 3rem 1rem;
-  overflow-y: auto;
-}
-
-.modal-overlay.open {
-  display: flex;
-}
-
-.modal-box {
-  background: var(--white);
-  max-width: 750px;
-  width: 100%;
-  padding: 3rem;
-  position: relative;
-  animation: modalIn 0.4s ease;
-  margin: auto;
-}
-
-@keyframes modalIn {
-  from { opacity: 0; transform: translateY(30px) scale(0.97); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-.modal-close {
-  position: absolute;
-  top: 1.2rem;
-  right: 1.5rem;
-  width: 36px;
-  height: 36px;
-  background: none;
-  border: 1px solid var(--sand-dark);
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-light);
-  font-size: 1.2rem;
-  transition: all 0.3s;
-  font-family: 'Lato', sans-serif;
-}
-
-.modal-close:hover {
-  background: var(--sand);
-  color: var(--charcoal);
-  border-color: var(--charcoal);
-}
-
-.modal-box h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: var(--olive-dark);
-  margin-bottom: 0.5rem;
-}
-
-.modal-box .modal-divider {
-  width: 50px;
-  height: 2px;
-  background: var(--gold);
-  margin-bottom: 2rem;
-}
-
-.modal-box h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  color: var(--olive-dark);
-  margin: 2rem 0 0.8rem;
-}
-
-.modal-box p, .modal-box li {
-  font-size: 0.95rem;
-  line-height: 1.8;
-  color: var(--text-light);
-  margin-bottom: 1rem;
-}
-
-.modal-box ul {
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.modal-box li {
-  margin-bottom: 0.5rem;
-}
-
-.modal-box .last-updated {
-  font-size: 0.82rem;
-  color: var(--sand-deeper);
-  font-style: italic;
-  margin-bottom: 2rem;
-}
-
-.faq-item {
-  border-bottom: 1px solid var(--sand-dark);
-  padding: 1.2rem 0;
-}
-
-.faq-question {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  color: var(--olive-dark);
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 600;
-  transition: color 0.3s;
-  background: none;
-  border: none;
-  width: 100%;
-  text-align: left;
-  padding: 0;
-}
-
-.faq-question:hover { color: var(--gold); }
-
-.faq-question span {
-  font-size: 1.4rem;
-  transition: transform 0.3s;
-  color: var(--gold);
-  min-width: 20px;
-  text-align: center;
-}
-
-.faq-question.open span { transform: rotate(45deg); }
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.3s;
-  padding: 0;
-}
-
-.faq-answer.open {
-  max-height: 300px;
-  padding-top: 1rem;
-}
-
-.faq-answer p {
-  margin-bottom: 0;
-}
-
 /* ===== ANIMATIONS ===== */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
@@ -1244,7 +1022,10 @@ footer {
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.reveal.active { opacity: 1; transform: translateY(0); }
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .reveal-left {
   opacity: 0;
@@ -1252,7 +1033,10 @@ footer {
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.reveal-left.active { opacity: 1; transform: translateX(0); }
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
 
 .reveal-right {
   opacity: 0;
@@ -1260,96 +1044,229 @@ footer {
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.reveal-right.active { opacity: 1; transform: translateX(0); }
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(45, 55, 30, 0.97);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu a {
+  color: var(--white);
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.mobile-menu a:hover {
+  color: var(--gold);
+}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-  .about-container { grid-template-columns: 1fr; gap: 3rem; }
-  .about-image { height: 400px; }
-  .products-grid { grid-template-columns: repeat(2, 1fr); }
-  .quality-grid { grid-template-columns: repeat(2, 1fr); }
-  .contact-container { grid-template-columns: 1fr; gap: 3rem; }
-  .footer-content { grid-template-columns: 1fr 1fr; }
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .about-image {
+    height: 400px;
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .quality-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 768px) {
-  nav { padding: 1rem 1.5rem; }
-  nav.scrolled { padding: 0.8rem 1.5rem; }
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  section { padding: 5rem 1.5rem; }
-  .hero h1 { font-size: 3rem; letter-spacing: 3px; }
-  .hero-tagline { font-size: 1.2rem; }
-  .section-title { font-size: 2.2rem; }
-  .products-grid { grid-template-columns: 1fr; max-width: 400px; }
-  .quality-grid { grid-template-columns: 1fr; max-width: 350px; margin: 0 auto; }
-  .process-connector { display: none; }
-  .process-steps { flex-direction: column; align-items: center; }
-  .about-stats { gap: 2rem; flex-wrap: wrap; }
-  .contact-form { padding: 2rem; }
-  .footer-content { grid-template-columns: 1fr; gap: 2rem; }
-  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
-  .modal-box { padding: 2rem 1.5rem; }
-  .modal-box h2 { font-size: 1.6rem; }
+  nav {
+    padding: 1rem 1.5rem;
+  }
+  
+  nav.scrolled {
+    padding: 0.8rem 1.5rem;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  section {
+    padding: 5rem 1.5rem;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+  }
+  
+  .hero-tagline {
+    font-size: 1.2rem;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+  
+  .quality-grid {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .process-connector {
+    display: none;
+  }
+  
+  .process-steps {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-stats {
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .contact-form {
+    padding: 2rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
-  .hero h1 { font-size: 2.3rem; letter-spacing: 2px; }
-  .hero-tagline { font-size: 1rem; }
-  .hero-subtext { font-size: 0.9rem; }
-  .hero-btn, .hero-btn-outline { padding: 0.9rem 2rem; font-size: 0.78rem; }
-  .section-title { font-size: 1.8rem; }
-  .about-image { height: 300px; }
-  .about-image-frame { top: -10px; right: -10px; }
-  .hero-buttons { flex-direction: column; align-items: center; }
+  .hero h1 {
+    font-size: 2.3rem;
+    letter-spacing: 2px;
+  }
+  
+  .hero-tagline {
+    font-size: 1rem;
+  }
+  
+  .hero-subtext {
+    font-size: 0.9rem;
+  }
+  
+  .hero-btn {
+    padding: 0.9rem 2.5rem;
+    font-size: 0.78rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .about-image {
+    height: 300px;
+  }
+
+  .about-image-frame {
+    top: -10px;
+    right: -10px;
+  }
+}
+
+/* ===== LEAF DECORATIONS ===== */
+.leaf-decoration {
+  position: absolute;
+  opacity: 0.05;
+  pointer-events: none;
 }
 </style>
 </head>
 <body>
 
-<!-- ===== NAVIGATION ===== -->
+<!-- Navigation -->
 <nav id="navbar">
-  <a href="#hero" class="nav-logo">MOROGANICS</a>
+  <a href="#" class="nav-logo">MOROGANICS</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#products">Products</a></li>
     <li><a href="#quality">Quality</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+    <li><a href="#products" class="nav-cta">Shop Now</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="Open menu">
+  <div class="hamburger" id="hamburger" aria-label="Menu" role="button">
     <span></span>
     <span></span>
     <span></span>
-  </button>
+  </div>
 </nav>
 
-<!-- ===== MOBILE MENU ===== -->
+<!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about" class="mobile-link">About</a>
   <a href="#products" class="mobile-link">Products</a>
   <a href="#quality" class="mobile-link">Quality</a>
   <a href="#process" class="mobile-link">Process</a>
   <a href="#contact" class="mobile-link">Contact</a>
-  <a href="#contact" class="mobile-link" style="color:var(--gold);">Get in Touch</a>
+  <a href="#products" class="mobile-link" style="color: var(--gold);">Shop Now</a>
 </div>
 
-<!-- ===== HERO SECTION ===== -->
+<!-- Hero Section -->
 <section class="hero" id="hero">
   <div class="hero-bg">
-    <!-- ============================================================
-         IMAGE-PLACEHOLDER-1 — HERO BACKGROUND
-         Recommended: 1920×1080px landscape photo of Moroccan olive groves
-         Replace the <svg>...</svg> below with:
-         <img src="images/hero-bg.jpg" alt="Moroccan olive groves" style="width:100%;height:100%;object-fit:cover;">
-         ============================================================ -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
       <defs>
         <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" style="stop-color:#87a96b"/>
-          <stop offset="40%" style="stop-color:#6b8e4e"/>
-          <stop offset="100%" style="stop-color:#4a6b2a"/>
+          <stop offset="0%" style="stop-color:#87a96b;stop-opacity:1"/>
+          <stop offset="40%" style="stop-color:#6b8e4e;stop-opacity:1"/>
+          <stop offset="100%" style="stop-color:#4a6b2a;stop-opacity:1"/>
         </linearGradient>
         <linearGradient id="hillGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" style="stop-color:#5a7a3a"/>
@@ -1367,37 +1284,48 @@ footer {
       </defs>
       <rect fill="url(#skyGrad)" width="1600" height="900"/>
       <circle cx="1200" cy="180" r="250" fill="url(#sunGrad)"/>
+      <!-- Rolling hills -->
       <path d="M0 500 Q200 380 400 450 Q600 520 800 420 Q1000 320 1200 400 Q1400 480 1600 380 L1600 900 L0 900Z" fill="url(#hillGrad1)" opacity="0.7"/>
       <path d="M0 580 Q300 480 500 550 Q700 620 900 500 Q1100 380 1300 480 Q1500 580 1600 480 L1600 900 L0 900Z" fill="url(#hillGrad2)" opacity="0.8"/>
       <path d="M0 650 Q200 600 400 660 Q600 720 800 640 Q1000 560 1200 630 Q1400 700 1600 620 L1600 900 L0 900Z" fill="#2a4518" opacity="0.9"/>
+      <!-- Olive trees -->
       <g opacity="0.6">
-        <rect x="200" y="480" width="6" height="50" fill="#5a4a30"/><ellipse cx="203" cy="470" rx="30" ry="25" fill="#4a6b2a"/>
-        <rect x="400" y="530" width="5" height="45" fill="#5a4a30"/><ellipse cx="402" cy="520" rx="25" ry="22" fill="#3d5a25"/>
-        <rect x="650" y="460" width="6" height="55" fill="#5a4a30"/><ellipse cx="653" cy="445" rx="32" ry="28" fill="#4a6b2a"/>
-        <rect x="900" y="440" width="5" height="50" fill="#5a4a30"/><ellipse cx="902" cy="428" rx="28" ry="24" fill="#3d5a25"/>
-        <rect x="1100" y="490" width="6" height="48" fill="#5a4a30"/><ellipse cx="1103" cy="478" rx="30" ry="26" fill="#4a6b2a"/>
-        <rect x="1350" y="510" width="5" height="45" fill="#5a4a30"/><ellipse cx="1352" cy="500" rx="26" ry="22" fill="#3d5a25"/>
+        <rect x="200" y="480" width="6" height="50" fill="#5a4a30"/>
+        <ellipse cx="203" cy="470" rx="30" ry="25" fill="#4a6b2a"/>
+        <rect x="400" y="530" width="5" height="45" fill="#5a4a30"/>
+        <ellipse cx="402" cy="520" rx="25" ry="22" fill="#3d5a25"/>
+        <rect x="650" y="460" width="6" height="55" fill="#5a4a30"/>
+        <ellipse cx="653" cy="445" rx="32" ry="28" fill="#4a6b2a"/>
+        <rect x="900" y="440" width="5" height="50" fill="#5a4a30"/>
+        <ellipse cx="902" cy="428" rx="28" ry="24" fill="#3d5a25"/>
+        <rect x="1100" y="490" width="6" height="48" fill="#5a4a30"/>
+        <ellipse cx="1103" cy="478" rx="30" ry="26" fill="#4a6b2a"/>
+        <rect x="1350" y="510" width="5" height="45" fill="#5a4a30"/>
+        <ellipse cx="1352" cy="500" rx="26" ry="22" fill="#3d5a25"/>
       </g>
       <g opacity="0.4">
-        <rect x="300" y="560" width="5" height="40" fill="#5a4a30"/><ellipse cx="302" cy="550" rx="22" ry="20" fill="#3d5a25"/>
-        <rect x="550" y="580" width="4" height="38" fill="#5a4a30"/><ellipse cx="552" cy="572" rx="20" ry="18" fill="#2a4518"/>
-        <rect x="780" y="540" width="5" height="42" fill="#5a4a30"/><ellipse cx="782" cy="530" rx="24" ry="20" fill="#3d5a25"/>
-        <rect x="1000" y="520" width="5" height="44" fill="#5a4a30"/><ellipse cx="1002" cy="508" rx="26" ry="22" fill="#4a6b2a"/>
-        <rect x="1250" y="560" width="4" height="38" fill="#5a4a30"/><ellipse cx="1252" cy="552" rx="20" ry="18" fill="#2a4518"/>
+        <rect x="300" y="560" width="5" height="40" fill="#5a4a30"/>
+        <ellipse cx="302" cy="550" rx="22" ry="20" fill="#3d5a25"/>
+        <rect x="550" y="580" width="4" height="38" fill="#5a4a30"/>
+        <ellipse cx="552" cy="572" rx="20" ry="18" fill="#2a4518"/>
+        <rect x="780" y="540" width="5" height="42" fill="#5a4a30"/>
+        <ellipse cx="782" cy="530" rx="24" ry="20" fill="#3d5a25"/>
+        <rect x="1000" y="520" width="5" height="44" fill="#5a4a30"/>
+        <ellipse cx="1002" cy="508" rx="26" ry="22" fill="#4a6b2a"/>
+        <rect x="1250" y="560" width="4" height="38" fill="#5a4a30"/>
+        <ellipse cx="1252" cy="552" rx="20" ry="18" fill="#2a4518"/>
       </g>
+      <!-- Foreground -->
       <path d="M0 750 Q400 700 800 740 Q1200 780 1600 720 L1600 900 L0 900Z" fill="#1e3510"/>
     </svg>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-badge">Premium Moroccan Olive Oil</div>
+    <div class="hero-badge">Premium Quality Since Day One</div>
     <h1>MOROGANICS</h1>
     <p class="hero-tagline">Authentic Moroccan Olive Oil</p>
     <p class="hero-subtext">From Moroccan groves to your table.</p>
-    <div class="hero-buttons">
-      <a href="#contact" class="hero-btn">Get in Touch</a>
-      <a href="#about" class="hero-btn-outline">Discover More</a>
-    </div>
+    <a href="#products" class="hero-btn">Shop Now</a>
   </div>
   <a href="#about" class="hero-scroll">
     <span>Scroll</span>
@@ -1405,16 +1333,10 @@ footer {
   </a>
 </section>
 
-<!-- ===== ABOUT SECTION ===== -->
+<!-- About Section -->
 <section class="about" id="about">
   <div class="about-container">
     <div class="about-image reveal-left">
-      <!-- ============================================================
-           IMAGE-PLACEHOLDER-2 — ABOUT SECTION PHOTO
-           Recommended: 600×700px photo of olive oil bottle, olive grove, or production
-           Replace the <svg>...</svg> below with:
-           <img src="images/about-photo.jpg" alt="Moroganics olive oil" style="width:100%;height:100%;object-fit:cover;">
-           ============================================================ -->
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 550" preserveAspectRatio="xMidYMid slice">
         <defs>
           <linearGradient id="abBg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -1430,8 +1352,15 @@ footer {
             <stop offset="0%" style="stop-color:#c9a84c;stop-opacity:0.6"/>
             <stop offset="100%" style="stop-color:#b08d30;stop-opacity:0.3"/>
           </linearGradient>
+          <linearGradient id="glassShine" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgba(255,255,255,0);"/>
+            <stop offset="40%" style="stop-color:rgba(255,255,255,0.15);"/>
+            <stop offset="60%" style="stop-color:rgba(255,255,255,0.15);"/>
+            <stop offset="100%" style="stop-color:rgba(255,255,255,0);"/>
+          </linearGradient>
         </defs>
         <rect width="500" height="550" fill="url(#abBg)"/>
+        <!-- Decorative tiles pattern (Moroccan inspired) -->
         <g opacity="0.06">
           <pattern id="morPattern" width="50" height="50" patternUnits="userSpaceOnUse">
             <path d="M25 0 L50 25 L25 50 L0 25Z" fill="none" stroke="#3d5a25" stroke-width="1"/>
@@ -1439,32 +1368,42 @@ footer {
           </pattern>
           <rect width="500" height="550" fill="url(#morPattern)"/>
         </g>
+        <!-- Olive oil bottle -->
         <g transform="translate(160, 60)">
+          <!-- Bottle shadow -->
           <ellipse cx="100" cy="430" rx="60" ry="12" fill="rgba(0,0,0,0.1)"/>
+          <!-- Bottle body -->
           <path d="M60 160 Q58 180 55 350 Q53 400 60 420 Q70 435 100 438 Q130 435 140 420 Q147 400 145 350 Q142 180 140 160Z" fill="url(#bottleGrad)"/>
+          <!-- Bottle neck -->
           <rect x="82" y="80" width="36" height="80" rx="2" fill="#4a6b2a"/>
+          <!-- Bottle cap -->
           <rect x="78" y="60" width="44" height="25" rx="3" fill="#c9a84c"/>
           <rect x="82" y="55" width="36" height="8" rx="2" fill="#b08d30"/>
+          <!-- Glass shine -->
           <path d="M75 160 Q73 180 70 350 Q68 400 74 418 L80 420 Q74 400 76 350 Q78 180 80 160Z" fill="rgba(255,255,255,0.15)"/>
+          <!-- Label -->
           <rect x="68" y="240" width="64" height="100" rx="2" fill="#faf8f4"/>
           <rect x="68" y="240" width="64" height="25" fill="#c9a84c" opacity="0.8"/>
           <text x="100" y="258" text-anchor="middle" font-family="serif" font-size="9" fill="white" font-weight="bold">MOROGANICS</text>
           <text x="100" y="285" text-anchor="middle" font-family="serif" font-size="6" fill="#5a7a3a">EXTRA VIRGIN</text>
           <text x="100" y="298" text-anchor="middle" font-family="serif" font-size="6" fill="#5a7a3a">OLIVE OIL</text>
+          <!-- Small olive branch on label -->
           <g transform="translate(85, 305)">
             <path d="M0 10 Q15 5 30 10" fill="none" stroke="#5a7a3a" stroke-width="0.8"/>
-            <ellipse cx="8" cy="8" rx="4" ry="3" fill="#5a7a3a" transform="rotate(-20,8,8)"/>
-            <ellipse cx="22" cy="8" rx="4" ry="3" fill="#5a7a3a" transform="rotate(20,22,8)"/>
+            <ellipse cx="8" cy="8" rx="4" ry="3" fill="#5a7a3a" transform="rotate(-20, 8, 8)"/>
+            <ellipse cx="22" cy="8" rx="4" ry="3" fill="#5a7a3a" transform="rotate(20, 22, 8)"/>
             <ellipse cx="15" cy="6" rx="4" ry="3" fill="#6b8e4e"/>
           </g>
+          <!-- Oil color inside -->
           <path d="M62 300 Q60 350 62 400 Q65 420 70 428 Q80 435 100 438 Q120 435 130 428 Q135 420 138 400 Q140 350 138 300Z" fill="url(#oilGrad)"/>
         </g>
-        <g transform="translate(30,400)" opacity="0.3">
+        <!-- Decorative olive branches -->
+        <g transform="translate(30, 400)" opacity="0.3">
           <path d="M0 20 Q30 10 60 25 Q90 40 120 20" fill="none" stroke="#5a7a3a" stroke-width="2"/>
-          <ellipse cx="20" cy="15" rx="8" ry="5" fill="#5a7a3a" transform="rotate(-30,20,15)"/>
-          <ellipse cx="50" cy="22" rx="8" ry="5" fill="#6b8e4e" transform="rotate(10,50,22)"/>
-          <ellipse cx="80" cy="30" rx="8" ry="5" fill="#5a7a3a" transform="rotate(-15,80,30)"/>
-          <ellipse cx="110" cy="20" rx="8" ry="5" fill="#6b8e4e" transform="rotate(20,110,20)"/>
+          <ellipse cx="20" cy="15" rx="8" ry="5" fill="#5a7a3a" transform="rotate(-30, 20, 15)"/>
+          <ellipse cx="50" cy="22" rx="8" ry="5" fill="#6b8e4e" transform="rotate(10, 50, 22)"/>
+          <ellipse cx="80" cy="30" rx="8" ry="5" fill="#5a7a3a" transform="rotate(-15, 80, 30)"/>
+          <ellipse cx="110" cy="20" rx="8" ry="5" fill="#6b8e4e" transform="rotate(20, 110, 20)"/>
         </g>
       </svg>
       <div class="about-image-frame"></div>
@@ -1479,7 +1418,7 @@ footer {
       <div class="about-stats">
         <div class="stat-item">
           <h3>100%</h3>
-          <p>Pure &amp; Natural</p>
+          <p>Pure & Natural</p>
         </div>
         <div class="stat-item">
           <h3>Fquih</h3>
@@ -1494,26 +1433,25 @@ footer {
   </div>
 </section>
 
-<!-- ===== PRODUCTS SECTION ===== -->
+<!-- Products Section -->
 <section class="products" id="products">
   <span class="section-label">Our Collection</span>
   <h2 class="section-title">Premium Olive Oil</h2>
   <div class="section-divider"></div>
-  <p class="products-subtitle">Explore our selection of extra virgin olive oil, carefully sourced from the finest Moroccan groves and available in three sizes.</p>
+  <p class="products-subtitle">Discover our selection of extra virgin olive oil, carefully sourced from the finest Moroccan groves.</p>
   <div class="products-grid">
 
-    <!-- PRODUCT CARD 1 — 250ml -->
+    <!-- Product 1 -->
     <div class="product-card reveal">
       <div class="product-image">
-        <!-- ============================================================
-             IMAGE-PLACEHOLDER-3 — PRODUCT: 250ml BOTTLE
-             Recommended: 400×600px product photo on transparent/white bg
-             Replace the <svg>...</svg> below with:
-             <img src="images/product-250ml.png" alt="250ml Extra Virgin Olive Oil">
-             ============================================================ -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 350">
-          <defs><linearGradient id="bt1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#6b8e4e"/><stop offset="100%" style="stop-color:#3d5a25"/></linearGradient></defs>
-          <g transform="translate(50,20)">
+          <defs>
+            <linearGradient id="bt1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#6b8e4e"/>
+              <stop offset="100%" style="stop-color:#3d5a25"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(50, 20)">
             <ellipse cx="50" cy="310" rx="35" ry="8" fill="rgba(0,0,0,0.08)"/>
             <path d="M30 100 Q28 120 26 240 Q25 270 30 285 Q38 300 50 303 Q62 300 70 285 Q75 270 74 240 Q72 120 70 100Z" fill="url(#bt1)"/>
             <rect x="40" y="45" width="20" height="55" rx="2" fill="#4a6b2a"/>
@@ -1533,21 +1471,20 @@ footer {
       <div class="product-size">250 ML</div>
       <h3 class="product-name">Extra Virgin Olive Oil</h3>
       <p class="product-desc">Naturally flavorful with a smooth, fruity taste and a light peppery finish. Perfect for everyday use.</p>
-      <a href="#contact" class="product-btn">Inquire</a>
+      <a href="#" class="product-btn">Buy Now</a>
     </div>
 
-    <!-- PRODUCT CARD 2 — 500ml -->
-    <div class="product-card reveal" style="transition-delay:0.15s;">
+    <!-- Product 2 -->
+    <div class="product-card reveal" style="transition-delay: 0.15s;">
       <div class="product-image">
-        <!-- ============================================================
-             IMAGE-PLACEHOLDER-4 — PRODUCT: 500ml BOTTLE
-             Recommended: 400×600px product photo on transparent/white bg
-             Replace the <svg>...</svg> below with:
-             <img src="images/product-500ml.png" alt="500ml Extra Virgin Olive Oil">
-             ============================================================ -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 350">
-          <defs><linearGradient id="bt2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#5a7a3a"/><stop offset="100%" style="stop-color:#2d4a1a"/></linearGradient></defs>
-          <g transform="translate(42,10)">
+          <defs>
+            <linearGradient id="bt2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#5a7a3a"/>
+              <stop offset="100%" style="stop-color:#2d4a1a"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(42, 10)">
             <ellipse cx="58" cy="325" rx="40" ry="9" fill="rgba(0,0,0,0.08)"/>
             <path d="M28 100 Q25 125 22 250 Q20 285 28 305 Q38 322 58 325 Q78 322 88 305 Q96 285 94 250 Q91 125 88 100Z" fill="url(#bt2)"/>
             <rect x="46" y="40" width="24" height="60" rx="2" fill="#3d5a25"/>
@@ -1566,22 +1503,21 @@ footer {
       </div>
       <div class="product-size">500 ML</div>
       <h3 class="product-name">Extra Virgin Olive Oil</h3>
-      <p class="product-desc">Naturally flavorful with a smooth, fruity taste and a light peppery finish. Ideal for cooking &amp; dressing.</p>
-      <a href="#contact" class="product-btn">Inquire</a>
+      <p class="product-desc">Naturally flavorful with a smooth, fruity taste and a light peppery finish. Ideal for cooking & dressing.</p>
+      <a href="#" class="product-btn">Buy Now</a>
     </div>
 
-    <!-- PRODUCT CARD 3 — 1 Liter -->
-    <div class="product-card reveal" style="transition-delay:0.3s;">
+    <!-- Product 3 -->
+    <div class="product-card reveal" style="transition-delay: 0.3s;">
       <div class="product-image">
-        <!-- ============================================================
-             IMAGE-PLACEHOLDER-5 — PRODUCT: 1 LITER BOTTLE
-             Recommended: 400×600px product photo on transparent/white bg
-             Replace the <svg>...</svg> below with:
-             <img src="images/product-1liter.png" alt="1 Liter Extra Virgin Olive Oil">
-             ============================================================ -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 350">
-          <defs><linearGradient id="bt3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#4a6b2a"/><stop offset="100%" style="stop-color:#1e3510"/></linearGradient></defs>
-          <g transform="translate(35,5)">
+          <defs>
+            <linearGradient id="bt3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#4a6b2a"/>
+              <stop offset="100%" style="stop-color:#1e3510"/>
+            </linearGradient>
+          </defs>
+          <g transform="translate(35, 5)">
             <ellipse cx="65" cy="335" rx="48" ry="10" fill="rgba(0,0,0,0.08)"/>
             <path d="M25 100 Q22 130 18 260 Q16 300 25 318 Q36 335 65 338 Q94 335 105 318 Q114 300 112 260 Q108 130 105 100Z" fill="url(#bt3)"/>
             <rect x="50" y="35" width="30" height="65" rx="2" fill="#2d4a1a"/>
@@ -1593,7 +1529,7 @@ footer {
             <text x="65" y="191" text-anchor="middle" font-family="serif" font-size="7" fill="white" font-weight="bold">MOROGANICS</text>
             <text x="65" y="218" text-anchor="middle" font-family="serif" font-size="6" fill="#5a7a3a">EXTRA VIRGIN</text>
             <text x="65" y="230" text-anchor="middle" font-family="serif" font-size="6" fill="#5a7a3a">OLIVE OIL</text>
-            <g transform="translate(45,238)">
+            <g transform="translate(45, 238)">
               <path d="M0 8 Q10 4 20 8 Q30 12 40 8" fill="none" stroke="#5a7a3a" stroke-width="0.6"/>
               <ellipse cx="10" cy="6" rx="3" ry="2" fill="#5a7a3a"/>
               <ellipse cx="20" cy="8" rx="3" ry="2" fill="#6b8e4e"/>
@@ -1607,13 +1543,13 @@ footer {
       <div class="product-size">1 LITER</div>
       <h3 class="product-name">Extra Virgin Olive Oil</h3>
       <p class="product-desc">Naturally flavorful with a smooth, fruity taste and a light peppery finish. Best value for families.</p>
-      <a href="#contact" class="product-btn">Inquire</a>
+      <a href="#" class="product-btn">Buy Now</a>
     </div>
 
   </div>
 </section>
 
-<!-- ===== QUALITY SECTION ===== -->
+<!-- Quality Section -->
 <section class="quality" id="quality">
   <span class="section-label">Our Promise</span>
   <h2 class="section-title">Why Choose Moroganics</h2>
@@ -1621,28 +1557,36 @@ footer {
   <div class="quality-grid">
     <div class="quality-item reveal">
       <div class="quality-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
       </div>
       <h3>Authentic Moroccan Origin</h3>
       <p>Sourced directly from olive groves in Fquih Ben Salah, Morocco — a region celebrated for premium olive cultivation.</p>
     </div>
-    <div class="quality-item reveal" style="transition-delay:0.1s;">
+    <div class="quality-item reveal" style="transition-delay: 0.1s;">
       <div class="quality-icon">
-        <svg viewBox="0 0 24 24"><path d="M20 7l-8-4-8 4v10l8 4 8-4V7zm-8 11L6 14.5V9l6 3v6zm0-7.5L6.3 7.5 12 4.6l5.7 2.9L12 10.5zm6 4L12 18v-6l6-3v5.5z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-1 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+        </svg>
       </div>
       <h3>Cold Extracted</h3>
       <p>Our oil is cold extracted to preserve its natural flavor, nutrients, and antioxidants for the purest quality.</p>
     </div>
-    <div class="quality-item reveal" style="transition-delay:0.2s;">
+    <div class="quality-item reveal" style="transition-delay: 0.2s;">
       <div class="quality-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/>
+        </svg>
       </div>
       <h3>Pure Extra Virgin</h3>
       <p>100% extra virgin olive oil with no additives, blending, or artificial processing — just pure olive goodness.</p>
     </div>
-    <div class="quality-item reveal" style="transition-delay:0.3s;">
+    <div class="quality-item reveal" style="transition-delay: 0.3s;">
       <div class="quality-icon">
-        <svg viewBox="0 0 24 24"><path d="M17.21 9l-4.38-6.56c-.19-.28-.51-.42-.83-.42-.32 0-.64.14-.83.43L6.79 9C4.6 9 2.8 10.6 2.8 12.6c0 2 1.6 3.6 3.6 3.6h11.2c2 0 3.6-1.6 3.6-3.6 0-2-1.6-3.6-3.6-3.6zM6 20h12v2H6z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.21 9l-4.38-6.56c-.19-.28-.51-.42-.83-.42-.32 0-.64.14-.83.43L6.79 9C4.6 9 2.8 10.6 2.8 12.6c0 2 1.6 3.6 3.6 3.6h11.2c2 0 3.6-1.6 3.6-3.6 0-2-1.6-3.6-3.6-3.6zM6 20h12v2H6z"/>
+        </svg>
       </div>
       <h3>Carefully Harvested</h3>
       <p>Hand-picked at optimal ripeness by experienced farmers using time-honored Mediterranean harvesting traditions.</p>
@@ -1650,7 +1594,7 @@ footer {
   </div>
 </section>
 
-<!-- ===== PROCESS SECTION ===== -->
+<!-- Process Section -->
 <section class="process" id="process">
   <span class="section-label">Our Journey</span>
   <h2 class="section-title">From Morocco to Your Table</h2>
@@ -1662,22 +1606,28 @@ footer {
       <h3>Harvested in Morocco</h3>
       <p>Olives are carefully handpicked from the sun-drenched groves of Fquih Ben Salah at peak ripeness.</p>
     </div>
-    <div class="process-connector"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
-    <div class="process-step reveal" style="transition-delay:0.15s;">
+    <div class="process-connector">
+      <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+    </div>
+    <div class="process-step reveal" style="transition-delay: 0.15s;">
       <div class="step-number">02</div>
       <div class="step-dot"></div>
-      <h3>Extracted &amp; Packed</h3>
+      <h3>Extracted & Packed</h3>
       <p>Cold extracted and bottled by Cooperative Agricole Al Karama, Fquih Ben Salah, ensuring quality at the source.</p>
     </div>
-    <div class="process-connector"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
-    <div class="process-step reveal" style="transition-delay:0.3s;">
+    <div class="process-connector">
+      <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+    </div>
+    <div class="process-step reveal" style="transition-delay: 0.3s;">
       <div class="step-number">03</div>
       <div class="step-dot"></div>
       <h3>Imported to the USA</h3>
       <p>Imported by Moroganics LLC, Worcester, Massachusetts, with careful handling throughout the journey.</p>
     </div>
-    <div class="process-connector"><svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg></div>
-    <div class="process-step reveal" style="transition-delay:0.45s;">
+    <div class="process-connector">
+      <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+    </div>
+    <div class="process-step reveal" style="transition-delay: 0.45s;">
       <div class="step-number">04</div>
       <div class="step-dot"></div>
       <h3>Delivered to You</h3>
@@ -1686,14 +1636,15 @@ footer {
   </div>
 </section>
 
-<!-- ===== CONTACT SECTION ===== -->
+<!-- Contact Section -->
 <section class="contact" id="contact">
   <div class="contact-container">
     <div class="contact-info reveal-left">
       <span class="section-label">Get In Touch</span>
       <h2 class="section-title">Contact Us</h2>
       <div class="section-divider"></div>
-      <p>We'd love to hear from you. Whether you have questions about our products, wholesale inquiries, or just want to learn more about Moroganics — reach out and we'll get back to you shortly.</p>
+      <p>We'd love to hear from you. Whether you have questions about our products, wholesale inquiries, or just want to say hello — reach out and we'll get back to you shortly.</p>
+      
       <div class="contact-detail">
         <div class="contact-detail-icon">
           <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
@@ -1703,19 +1654,21 @@ footer {
           <p>Moroganics LLC<br>Worcester, MA 01607<br>United States</p>
         </div>
       </div>
+
       <div class="contact-detail">
         <div class="contact-detail-icon">
           <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </div>
         <div>
           <h4>Email</h4>
-          <p><a href="mailto:info@moroganics.com">info@moroganics.com</a></p>
+          <p><a href="mailto:info@moroganics.com" style="color: var(--olive); text-decoration: none;">info@moroganics.com</a></p>
         </div>
       </div>
     </div>
+
     <div class="contact-form reveal-right">
       <h3>Send Us a Message</h3>
-      <form id="contactForm">
+      <form id="contactForm" onsubmit="handleSubmit(event)">
         <div class="form-group">
           <label for="name">Full Name</label>
           <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -1725,14 +1678,8 @@ footer {
           <input type="email" id="email" name="email" placeholder="Your email" required>
         </div>
         <div class="form-group">
-          <label for="inquiry">Inquiry Type</label>
-          <select id="inquiry" name="inquiry">
-            <option value="general">General Question</option>
-            <option value="wholesale">Wholesale Inquiry</option>
-            <option value="product">Product Information</option>
-            <option value="partnership">Partnership</option>
-            <option value="other">Other</option>
-          </select>
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Subject">
         </div>
         <div class="form-group">
           <label for="message">Message</label>
@@ -1744,258 +1691,74 @@ footer {
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- Footer -->
 <footer>
   <div class="footer-content">
     <div class="footer-brand">
-      <a href="#hero" class="nav-logo">MOROGANICS</a>
+      <a href="#" class="nav-logo">MOROGANICS</a>
       <p>Authentic Moroccan olive oil, handpicked and cold extracted for the purest quality. From Moroccan groves to your table.</p>
       <div class="footer-social">
-        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
-        <a href="#" aria-label="Twitter / X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" fill="none" stroke="currentColor" stroke-width="2"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter">
+          <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" fill="none" stroke="currentColor" stroke-width="2"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="currentColor"/></svg>
+        </a>
       </div>
     </div>
     <div class="footer-col">
-      <h4>Navigation</h4>
+      <h4>Quick Links</h4>
       <ul>
         <li><a href="#about">About Us</a></li>
-        <li><a href="#products">Our Products</a></li>
+        <li><a href="#products">Products</a></li>
         <li><a href="#quality">Quality</a></li>
         <li><a href="#process">Our Process</a></li>
-        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Products</h4>
       <ul>
-        <li><a href="#products">250ml EVOO</a></li>
-        <li><a href="#products">500ml EVOO</a></li>
-        <li><a href="#products">1 Liter EVOO</a></li>
-        <li><a href="#contact">Wholesale Inquiries</a></li>
+        <li><a href="#">250ml EVOO</a></li>
+        <li><a href="#">500ml EVOO</a></li>
+        <li><a href="#">1 Liter EVOO</a></li>
+        <li><a href="#">Gift Sets</a></li>
+        <li><a href="#">Wholesale</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Legal</h4>
+      <h4>Company</h4>
       <ul>
-        <li><a onclick="openModal('privacyModal')">Privacy Policy</a></li>
-        <li><a onclick="openModal('termsModal')">Terms of Service</a></li>
-        <li><a onclick="openModal('faqModal')">FAQ</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Shipping Info</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">FAQ</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <p>&copy; 2025 Moroganics LLC. All rights reserved.</p>
-    <p>Worcester, Massachusetts &nbsp;·&nbsp; <a onclick="openModal('privacyModal')" style="cursor:pointer;">Privacy</a> &nbsp;·&nbsp; <a onclick="openModal('termsModal')" style="cursor:pointer;">Terms</a></p>
+    <p>Crafted with love — <a href="#">Worcester, Massachusetts</a></p>
   </div>
 </footer>
 
-<!-- ============================================================
-     MODAL: PRIVACY POLICY
-     ============================================================ -->
-<div class="modal-overlay" id="privacyModal">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('privacyModal')">&times;</button>
-    <h2>Privacy Policy</h2>
-    <div class="modal-divider"></div>
-    <p class="last-updated">Last updated: January 1, 2025</p>
-
-    <p>Moroganics LLC ("Moroganics," "we," "us," or "our") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.</p>
-
-    <h3>1. Information We Collect</h3>
-    <p>We may collect personal information that you voluntarily provide when you:</p>
-    <ul>
-      <li>Fill out our contact form (name, email address, message content)</li>
-      <li>Send us an email directly</li>
-      <li>Subscribe to our newsletter or updates</li>
-      <li>Submit a wholesale or partnership inquiry</li>
-    </ul>
-    <p>We may also automatically collect certain technical information, including your IP address, browser type, operating system, referring URLs, and browsing behavior on our site through cookies and similar technologies.</p>
-
-    <h3>2. How We Use Your Information</h3>
-    <p>We use the information we collect to:</p>
-    <ul>
-      <li>Respond to your inquiries and provide customer support</li>
-      <li>Communicate with you about our products, updates, and promotions</li>
-      <li>Improve our website and user experience</li>
-      <li>Process wholesale or partnership requests</li>
-      <li>Comply with legal obligations</li>
-    </ul>
-
-    <h3>3. Information Sharing</h3>
-    <p>We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:</p>
-    <ul>
-      <li><strong>Service Providers:</strong> With trusted third-party service providers who assist us in operating our website and conducting business, subject to confidentiality agreements.</li>
-      <li><strong>Legal Requirements:</strong> When required by law, regulation, legal process, or governmental request.</li>
-      <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of all or a portion of our assets.</li>
-    </ul>
-
-    <h3>4. Cookies &amp; Tracking Technologies</h3>
-    <p>Our website may use cookies and similar tracking technologies to enhance your browsing experience. You can set your browser to refuse all or some cookies, or to alert you when cookies are being sent. If you disable cookies, some parts of our website may not function properly.</p>
-
-    <h3>5. Data Security</h3>
-    <p>We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure.</p>
-
-    <h3>6. Third-Party Links</h3>
-    <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of those websites. We encourage you to review the privacy policies of any third-party sites you visit.</p>
-
-    <h3>7. Children's Privacy</h3>
-    <p>Our website is not directed to individuals under the age of 13. We do not knowingly collect personal information from children under 13. If we learn that we have collected such information, we will take steps to delete it promptly.</p>
-
-    <h3>8. Your Rights</h3>
-    <p>Depending on your jurisdiction, you may have the right to access, correct, delete, or restrict the processing of your personal information. To exercise any of these rights, please contact us at <a href="mailto:info@moroganics.com" style="color:var(--olive);">info@moroganics.com</a>.</p>
-
-    <h3>9. Changes to This Policy</h3>
-    <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the updated policy on our website with a revised "Last updated" date. Your continued use of our website after changes are posted constitutes your acceptance of the updated policy.</p>
-
-    <h3>10. Contact Us</h3>
-    <p>If you have any questions about this Privacy Policy, please contact us:</p>
-    <p>
-      Moroganics LLC<br>
-      Worcester, MA 01607<br>
-      United States<br>
-      Email: <a href="mailto:info@moroganics.com" style="color:var(--olive);">info@moroganics.com</a>
-    </p>
-  </div>
-</div>
-
-<!-- ============================================================
-     MODAL: TERMS OF SERVICE
-     ============================================================ -->
-<div class="modal-overlay" id="termsModal">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('termsModal')">&times;</button>
-    <h2>Terms of Service</h2>
-    <div class="modal-divider"></div>
-    <p class="last-updated">Last updated: January 1, 2025</p>
-
-    <p>Welcome to the Moroganics website. By accessing or using this website, you agree to be bound by these Terms of Service ("Terms"). If you do not agree with any part of these Terms, you must not use our website.</p>
-
-    <h3>1. Acceptance of Terms</h3>
-    <p>By accessing this website, you confirm that you are at least 18 years of age or have the consent of a parent or guardian, and you agree to comply with and be bound by these Terms and all applicable laws and regulations.</p>
-
-    <h3>2. Use of Website</h3>
-    <p>This website is provided for informational purposes only. You agree to use this website only for lawful purposes and in a manner that does not infringe upon the rights of, restrict, or inhibit anyone else's use of the website. Prohibited behavior includes:</p>
-    <ul>
-      <li>Transmitting any unlawful, threatening, defamatory, or otherwise objectionable material</li>
-      <li>Attempting to gain unauthorized access to our systems or networks</li>
-      <li>Using the site for any commercial solicitation without our prior written consent</li>
-      <li>Introducing viruses, trojans, worms, or other malicious code</li>
-    </ul>
-
-    <h3>3. Intellectual Property</h3>
-    <p>All content on this website — including but not limited to text, graphics, logos, images, brand names, and design elements — is the property of Moroganics LLC or its content suppliers and is protected by United States and international copyright, trademark, and other intellectual property laws. You may not reproduce, distribute, modify, display, or create derivative works of any content without our prior written permission.</p>
-
-    <h3>4. Product Information</h3>
-    <p>We make every effort to display and describe our products accurately. However, we do not warrant that product descriptions, images, or other content on this website are complete, reliable, current, or error-free. Product availability, specifications, and details are subject to change without notice.</p>
-
-    <h3>5. Contact &amp; Inquiries</h3>
-    <p>When you submit inquiries through our contact form or email, you agree to provide accurate and truthful information. We reserve the right to refuse service or decline inquiries at our sole discretion.</p>
-
-    <h3>6. Third-Party Links</h3>
-    <p>Our website may contain links to third-party websites that are not owned or controlled by Moroganics LLC. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party sites. We encourage you to be aware when you leave our site and to read the terms and conditions and privacy policies of each site you visit.</p>
-
-    <h3>7. Disclaimer of Warranties</h3>
-    <p>THIS WEBSITE IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. MOROGANICS LLC DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE WEBSITE WILL BE UNINTERRUPTED, SECURE, OR ERROR-FREE.</p>
-
-    <h3>8. Limitation of Liability</h3>
-    <p>IN NO EVENT SHALL MOROGANICS LLC, ITS DIRECTORS, EMPLOYEES, PARTNERS, AGENTS, SUPPLIERS, OR AFFILIATES BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM YOUR ACCESS TO OR USE OF (OR INABILITY TO ACCESS OR USE) THE WEBSITE.</p>
-
-    <h3>9. Indemnification</h3>
-    <p>You agree to indemnify and hold harmless Moroganics LLC and its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including attorneys' fees) arising out of or relating to your use of the website or violation of these Terms.</p>
-
-    <h3>10. Governing Law</h3>
-    <p>These Terms shall be governed by and construed in accordance with the laws of the Commonwealth of Massachusetts, United States, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts located in Worcester County, Massachusetts.</p>
-
-    <h3>11. Changes to Terms</h3>
-    <p>We reserve the right to modify or replace these Terms at any time at our sole discretion. Material changes will be indicated by updating the "Last updated" date. Your continued use of the website following the posting of revised Terms constitutes acceptance of those changes.</p>
-
-    <h3>12. Contact Us</h3>
-    <p>If you have any questions about these Terms of Service, please contact us:</p>
-    <p>
-      Moroganics LLC<br>
-      Worcester, MA 01607<br>
-      United States<br>
-      Email: <a href="mailto:info@moroganics.com" style="color:var(--olive);">info@moroganics.com</a>
-    </p>
-  </div>
-</div>
-
-<!-- ============================================================
-     MODAL: FAQ
-     ============================================================ -->
-<div class="modal-overlay" id="faqModal">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('faqModal')">&times;</button>
-    <h2>Frequently Asked Questions</h2>
-    <div class="modal-divider"></div>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">What makes Moroganics olive oil special? <span>+</span></button>
-      <div class="faq-answer">
-        <p>Moroganics olive oil is sourced exclusively from the Fquih Ben Salah region in Morocco, known for its rich soil and ideal olive-growing climate. Our oil is cold extracted by Cooperative Agricole Al Karama, preserving the natural flavor, nutrients, and antioxidants. Every bottle is 100% pure extra virgin olive oil with no additives or blending.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">Where is your olive oil sourced from? <span>+</span></button>
-      <div class="faq-answer">
-        <p>Our olive oil is harvested from olive groves in Fquih Ben Salah, Morocco — a region in the Beni Mellal-Khénifra area with a long tradition of premium olive cultivation. The olives are extracted and packed locally by Cooperative Agricole Al Karama before being imported to the United States.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">What does "cold extracted" mean? <span>+</span></button>
-      <div class="faq-answer">
-        <p>Cold extraction means the olive oil is processed at temperatures below 27°C (80°F). This method preserves the oil's natural flavors, aromas, and nutritional properties — including polyphenols and antioxidants — that can be diminished by heat-based extraction methods.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">What sizes are available? <span>+</span></button>
-      <div class="faq-answer">
-        <p>We currently offer three sizes: 250ml, 500ml, and 1 Liter bottles of Extra Virgin Olive Oil. Each size delivers the same premium quality and authentic Moroccan flavor.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">Do you offer wholesale or bulk orders? <span>+</span></button>
-      <div class="faq-answer">
-        <p>Yes! We welcome wholesale inquiries from retailers, restaurants, specialty food stores, and distributors. Please reach out to us via our contact form or email us at <a href="mailto:info@moroganics.com" style="color:var(--olive);">info@moroganics.com</a> with details about your business and needs.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">How can I purchase Moroganics olive oil? <span>+</span></button>
-      <div class="faq-answer">
-        <p>We are currently building our distribution network. To inquire about purchasing our olive oil, please contact us directly through the contact form on our website or email <a href="mailto:info@moroganics.com" style="color:var(--olive);">info@moroganics.com</a>. We'll be happy to assist you.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">How should I store olive oil? <span>+</span></button>
-      <div class="faq-answer">
-        <p>Store your Moroganics olive oil in a cool, dark place away from direct sunlight and heat sources. Keep the bottle tightly sealed after each use. Properly stored, our olive oil maintains its quality and flavor for up to 18 months from the bottling date.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">How do I contact Moroganics? <span>+</span></button>
-      <div class="faq-answer">
-        <p>You can reach us by email at <a href="mailto:info@moroganics.com" style="color:var(--olive);">info@moroganics.com</a>, through the contact form on our website, or by mail at Moroganics LLC, Worcester, MA 01607, United States. We aim to respond to all inquiries within 24–48 hours.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ===== JAVASCRIPT ===== -->
 <script>
 // ===== NAVBAR SCROLL =====
 const navbar = document.getElementById('navbar');
+
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 80);
+  if (window.scrollY > 80) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
 });
 
 // ===== HAMBURGER MENU =====
@@ -2019,108 +1782,63 @@ mobileLinks.forEach(link => {
 
 // ===== SCROLL REVEAL =====
 function revealElements() {
-  const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-  els.forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight - 120) {
+  const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const windowHeight = window.innerHeight;
+
+  elements.forEach(el => {
+    const elementTop = el.getBoundingClientRect().top;
+    const revealPoint = 120;
+
+    if (elementTop < windowHeight - revealPoint) {
       el.classList.add('active');
     }
   });
 }
+
 window.addEventListener('scroll', revealElements);
 window.addEventListener('load', revealElements);
 
-// ===== SMOOTH SCROLL =====
+// ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    const href = this.getAttribute('href');
-    if (href && href.startsWith('#')) {
-      e.preventDefault();
-      const target = document.querySelector(href);
-      if (target) {
-        window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
-      }
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      const offsetTop = target.offsetTop - 70;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
     }
   });
 });
 
 // ===== CONTACT FORM =====
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+function handleSubmit(e) {
   e.preventDefault();
-  const btn = this.querySelector('.form-btn');
-  const original = btn.textContent;
-  btn.textContent = '✓  Message Sent Successfully!';
+  const btn = e.target.querySelector('.form-btn');
+  const originalText = btn.textContent;
+  btn.textContent = 'Message Sent!';
   btn.style.background = 'var(--gold)';
-  btn.disabled = true;
+  
   setTimeout(() => {
-    btn.textContent = original;
+    btn.textContent = originalText;
     btn.style.background = '';
-    btn.disabled = false;
-    this.reset();
-  }, 3500);
-});
+    e.target.reset();
+  }, 3000);
+}
 
-// ===== PARALLAX HERO =====
+// ===== PARALLAX EFFECT ON HERO (subtle) =====
 window.addEventListener('scroll', () => {
   const hero = document.querySelector('.hero-content');
-  const s = window.scrollY;
-  if (s < window.innerHeight && hero) {
-    hero.style.transform = `translateY(${s * 0.3}px)`;
-    hero.style.opacity = 1 - (s / window.innerHeight) * 0.8;
+  const scrolled = window.scrollY;
+  if (scrolled < window.innerHeight) {
+    hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+    hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.8;
   }
 });
-
-// ===== MODAL SYSTEM =====
-function openModal(id) {
-  const modal = document.getElementById(id);
-  if (modal) {
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-}
-
-function closeModal(id) {
-  const modal = document.getElementById(id);
-  if (modal) {
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-}
-
-// Close modal on overlay click
-document.querySelectorAll('.modal-overlay').forEach(overlay => {
-  overlay.addEventListener('click', function(e) {
-    if (e.target === this) {
-      this.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-  });
-});
-
-// Close modal on Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    document.querySelectorAll('.modal-overlay.open').forEach(m => {
-      m.classList.remove('open');
-    });
-    document.body.style.overflow = '';
-  }
-});
-
-// ===== FAQ ACCORDION =====
-function toggleFaq(btn) {
-  const answer = btn.nextElementSibling;
-  const isOpen = answer.classList.contains('open');
-
-  // Close all others in the same modal
-  btn.closest('.modal-box').querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
-  btn.closest('.modal-box').querySelectorAll('.faq-question').forEach(q => q.classList.remove('open'));
-
-  if (!isOpen) {
-    answer.classList.add('open');
-    btn.classList.add('open');
-  }
-}
 </script>
 
 </body>
 </html>
+```
